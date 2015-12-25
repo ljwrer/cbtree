@@ -272,7 +272,7 @@ define(["dojo/_base/lang",
 		resources.forEach( function( url ) {
 			url = require.toUrl(url);
 			if ( !(url in cacheURL) ) { 
-				request( url, {handleAs: "json" } ).then ( 
+				request( url, {handleAs: "json",headers:{"X-Requested-With": ""}} ).then ( 
 					function (response) {
 						addMessage( response );
 						resourceDone();
